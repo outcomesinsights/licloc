@@ -1,0 +1,19 @@
+Package: licloc
+Type: Package
+Title: Wrapper Around tictoc To Use Logging
+Version: 0.1.0
+Author: aguynamedryan
+Maintainer: The package maintainer <aguynamedryan@gmail.com>
+Description: licloc is a wrapper around tictoc.  I needed a way to show nested
+    tics and tocs and wanted tictoc to log messages by default.  Rather than 
+    modify the original tictoc, I created some, admittedly convulted, functions 
+    that wrap `tic` and `toc`
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    logger,
+    tictoc
+Suggests: 
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

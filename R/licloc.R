@@ -1,5 +1,5 @@
 env.licloc <- new.env()
-assign(".licloc.indent",-1, envir = env.licloc)
+assign(".licloc.indent", -1, envir = env.licloc)
 assign(".licloc.symbols", "-*+#~$^@!", envir = env.licloc)
 assign(".licloc.log_level", NULL, envir = env.licloc)
 
@@ -51,8 +51,17 @@ licloc.get_symbol_string <- function() {
 #' to the screen directly
 #'
 #' @param level The logging threshold which tictoc messages should use
+#' @param reset_indent By default, resets the indentation of logging.
+#'   Set to FALSE to preserve the existing indentation
+#'   This was done as a convenience because a process that dies does not
+#'   reset the indentation of licloc but most programs will set the log
+#'   level as part of initialization
 #' @export
-licloc.set_log_level <- function(level = logger::DEBUG) {
+licloc.set_log_level <- function(level = logger::DEBUG, reset_indent = TRUE) {
+  if (reset_indent) {
+    licloc.set_indent(-1)
+  }
+
   invisible(assign(".licloc.log_level", level, envir = env.licloc))
 }
 

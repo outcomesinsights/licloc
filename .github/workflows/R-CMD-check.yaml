@@ -32,10 +32,7 @@ jobs:
       - uses: actions/checkout@v6
 
       - name: Deactivate renv
-        shell: Rscript {0}
-        run: |
-          if (file.exists(".Rprofile")) file.remove(".Rprofile")
-          if (file.exists("renv.lock")) file.remove("renv.lock")
+        run: rm -f .Rprofile renv.lock
 
       - uses: r-lib/actions/setup-pandoc@v2
 

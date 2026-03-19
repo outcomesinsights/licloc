@@ -1,0 +1,8 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "server",
+  "dolt_server_port": 3308,
+  "dolt_database": "beads_licloc",
+  "project_id": "777b75bb-a969-4e2d-a84e-6547cdbe9faf"
+}
